@@ -19,7 +19,7 @@ function whoAmI(name, age) {
  	  console.log('I was born on ' + yob);
   }
 }
-whoAmI("Roberto", '36');
+whoAmI("Roberto", 36);
 
 // Set 2
 function jediName(firstName, lastName) {
@@ -44,3 +44,33 @@ function beyond (num) {
   }
 }
 console.log(beyond(Infinity))
+
+function getChar(word) {
+  var table = {
+    a: 2,
+    b: 3,
+    c: 4,
+    d: 5
+  }
+  var firstLetter = word[0];
+  var character = ' ';
+  for (var key in table) {
+    if (key === firstLetter) {
+      var position = table[key] - 1;
+      character = word.substr(position, 1);
+    }
+  }
+  return character;
+}
+
+// input is a string space separated (a phrase)
+function decode(message) {
+  var words = message.split(' ');
+
+  return words.map(function(word) { // ['l', 'c', 'd', 'f'].join()
+    return getChar(word);
+  }).join('');
+}
+
+console.log(getChar('cycle') === 'l');
+console.log(decode('craft block argon meter bells brown croon droop'));
