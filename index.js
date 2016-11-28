@@ -27,5 +27,20 @@ function jediName(firstName, lastName) {
   var firstTwoChars = firstName.substr(0,2);
   return firstThreeChars + firstTwoChars;
 }
-
 console.log(jediName('Roberto', 'Quezada') === 'QueRo');
+//If num is zero it should log out 'Staying home'.
+function beyond (num) {
+  if (num === Number.POSITIVE_INFINITY || num === Number.NEGATIVE_INFINITY) {
+    return "And beyond";
+  }
+  else if (num == 0) {
+    return "Staying home"
+  }
+  else if (isFinite(num) && num < 0) {
+    return "To negative infinity";
+  }
+  else if (isFinite(num)) {
+    return "To infinity";
+  }
+}
+console.log(beyond(Infinity))
